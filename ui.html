@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head> </head>
+
+    <body>
+        <input id="address" type="url" /><br />
+        <iframe id="view"></iframe>
+    </body>
+
+    <script>
+        let address = document.getElementById("address");
+
+        address.addEventListener("keydown", function (key) {
+            if (key.code === "Enter") {
+                window.external.invoke(address.value);
+            }
+        });
+    </script>
+
+    <style>
+        iframe {
+            height: 90vh;
+            width: 99vw;
+        }
+
+        input {
+            width: 99vw;
+        }
+    </style>
+</html>

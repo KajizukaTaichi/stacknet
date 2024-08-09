@@ -1,0 +1,43 @@
+#
+    This is StackNet browser
+    (c) 2024 Kajizuka Taichi. All rights reserved
+#
+
+# Main class #
+[(StackNet)
+    # Window sizes #
+    [(width) 1000]
+    [(height) 570]
+
+    # User-interface #
+    [(layout)]
+
+    [(code) (
+        # Get url to access #
+        (url) var
+
+        # Print logs #
+        now-time (: User access to ) concat
+        url concat print
+
+        # Access its url #
+        url request (html) var
+
+        # Show HTML #
+        (document.getElementById("view").srcdoc = `{}`;)
+        ({}) html replace
+    )]
+] (window) var
+
+# Initiarize #
+window [
+    # Read user-interface #
+    (./ui.html) read-file
+] instance (system) var
+
+# Include license information #
+((c) 2024 Kajizuka Taichi. All rights reserved)
+(license) var
+
+# Launch #
+system gui
